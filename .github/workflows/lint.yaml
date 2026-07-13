@@ -1,0 +1,25 @@
+name: lint
+
+on:
+  push:
+    branches: [main]
+  pull_request_target:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions-rust-lang/setup-rust-toolchain@166cdcfd11aee3cb47222f9ddb555ce30ddb9659 # v1.17.0
+        with:
+          components: rustfmt, clippy
+      - name: Add target
+        run: rustup target add riscv32imac-unknown-none-elf
+      - name: Run formatter
+        run: cargo fmt -- --check
+      - name: Run linter
+        run: cargo clippy -- -D warnings
