@@ -1,9 +1,13 @@
 # ESPwner 🔑
 
-Note that the [.vscode/settings.json](./.vscode/settings.json) file should stay version controlled, otherwise `rust-analyzer` (by default) will constantly attempt to compile the project for the host
-architecture, raising false errors. Other IDEs may also require similar configuration.
+This project is intended only for authorized security testing, research, and educational purposes. Do not use it against networks, systems, or accounts without the explicit permission of their owner. You are solely responsible for complying with all applicable laws and for any misuse or resulting harm.
 
-We do not have to explicitly define a `memory.x` file for this `probe-rs` project, as the `esp-hal` crate already provides a default linker script for the ESP-C6.
+Some useful notes for developers:
+
+- We do not have to explicitly define a `memory.x` file for this `probe-rs` project, as the `esp-hal` crate already provides a default linker script for the ESP-C6.
+
+- The [.vscode/settings.json](./.vscode/settings.json) file should stay version controlled, otherwise `rust-analyzer` (by default) will constantly attempt to compile the project for the host
+architecture, raising false errors. Other IDEs may also require similar configuration.
 
 ## Development 🛠️
 
