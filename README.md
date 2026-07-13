@@ -15,11 +15,9 @@ architecture, raising false errors. Other IDEs may also require similar configur
 
     - Linux users **must** also follow the [UDEV rules configuration](https://probe.rs/docs/getting-started/probe-setup/) step.
 
-2. Install the espressif toolchain: `cargo install espflash --locked`
+2. Connect the ESP-C6 via USB.
 
-3. Connect the ESP-C6 via USB.
-
-4. Use `cargo run` to flash the dev firmware to the microcontroller and initiate the serial connection for
+3. Use `cargo run` to flash the dev firmware to the microcontroller and initiate the serial connection for
 debugging.
 
     - If the toolkit fails to find a probe, ensure your OS does not have any additional requirements mentioned in the [probe setup](https://probe.rs/docs/getting-started/probe-setup/) docs.
@@ -28,4 +26,4 @@ debugging.
 
 - Run `cargo build --release` and check the `target` folder for the compiled output.
 
-- Alternatively, you can use `cargo run --release` to build and immediately flash the release firmware to the microcontroller.
+- Alternatively, you can use `cargo run --release` to build and immediately flash the release firmware to the USB connected microcontroller.
