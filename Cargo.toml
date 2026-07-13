@@ -1,8 +1,8 @@
 [package]
 name = "espwner"
+version = "0.1.0"
 edition = "2024"
 rust-version = "1.88"
-version = "0.1.0"
 
 [dependencies]
 esp-hal = { version = "1.1.0", features = ["defmt", "esp32c6", "unstable"] }
